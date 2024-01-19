@@ -1,0 +1,29 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+<html>
+<head></head>
+        <body>
+            <center>
+                <h2>VIEW Delivery</h2>
+                <table border="1">
+                    <tr>
+                        <th>delivery boy Id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>phone_no</th>
+
+
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+                        <td>{{ i.deliveryboy_id }}</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.email }}</td>
+                       <td> {{ i.phone_no }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{% endblock %}

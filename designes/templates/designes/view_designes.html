@@ -1,0 +1,26 @@
+{% extends 'temp/main_customer.html' %}
+{% block base %}
+<html>
+    <head>    </head>
+
+        <body>
+            <center>
+                <h2>VIEW DESIGNES</h2>
+                <table border="1" >
+{#                    <tr><th>DESIGNER_ID</th>#}
+                        <th>DESIGNES</th>
+                        <th>IMAGES</th>
+                        
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+{#                        <td>{{ i. }}</td>#}
+                        <td>{{ i.designes }}</td>
+                        <td><img src="\static\{{ i.images }}" style="height: 200px"></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{% endblock %}

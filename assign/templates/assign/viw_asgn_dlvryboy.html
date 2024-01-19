@@ -1,0 +1,32 @@
+{% extends 'temp/main_deliver_boy.html' %}
+{% block base %}
+<html>
+<head></head>
+        <body>
+            <center>
+                <h2>VIEW ASSIGN</h2>
+                <table border="1">
+                    <tr>
+                        <th>customer_id</th>
+                        <th>Adress</th>
+                        <th>order_id</th>
+                        <th>deliveryboy_id</th>
+                        <th>delevery_Status</th>
+{#                        <th></th>#}
+                    </tr>
+                     {% for i in x %}
+                    <tr>
+                        <td>{{ i.customer.customer_name }}</td>
+                        <td>{{ i.customer.customer_name}}</td>
+                        <td>{{ i.order.orders_id}}</td>
+                        <td>{{ i.deliveryboy.name}}</td>
+                        <td>{{  i.delivery_status }} </td>
+                        <td><a href="/assign/Delivered/{{ i.assign_id}}">Delevered</a></td>
+                        <td><a href="/assign/not_delivered/{{i.assign_id}}">Not delevered</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{% endblock %}

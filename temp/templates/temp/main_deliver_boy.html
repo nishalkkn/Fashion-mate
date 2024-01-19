@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>fashion mate home </title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="/static/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+    <!-- TemplateMo 571 Hexashop -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('/static/assets/images/left-banner-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .main-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main-banner .left-content {
+            text-align: center;
+            color: #fff;
+        }
+
+        .main-banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .login-form {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .abcd {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100vh; /* Set the height to 100% of the viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="/static/assets/images/logos_12.jpg" alt="Logo">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/temp/deliveryboy/" class="active">Home</a></li>
+                            <!-- Add more menu items as needed -->
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Form -->
+    <div class="abcd">
+    <div class="main-banner" id="top">
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-auto">
+                    <div class="login-form">
+                        {% block base %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Your other HTML content goes here -->
+
+    <!-- Scripts -->
+    <script src="/static/assets/js/jquery-2.1.0.min.js"></script>
+    <script src="/static/assets/js/popper.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/owl-carousel.js"></script>
+    <script src="/static/assets/js/accordions.js"></script>
+    <script src="/static/assets/js/datepicker.js"></script>
+    <script src="/static/assets/js/scrollreveal.min.js"></script>
+    <script src="/static/assets/js/waypoints.min.js"></script>
+    <script src="/static/assets/js/jquery.counterup.min.js"></script>
+    <script src="/static/assets/js/imgfix.min.js"></script>
+    <script src="/static/assets/js/slick.js"></script>
+    <script src="/static/assets/js/lightbox.js"></script>
+    <script src="/static/assets/js/isotope.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
+
+    <script>
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

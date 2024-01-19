@@ -1,0 +1,57 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+<html>
+    <head> </head>
+        <body>
+            <center>
+                <h2>VIEW MEASUREMENTS</h2>
+                <table border="1" class="table table-striped">
+                    <tr>
+                         <td style="color: black" >CUSTOMER</td>
+                         <td style="color: black" >WAY</td>
+                        <td style="color: black">NECK</td>
+                         <td style="color: black">SHOULDER</td>
+                         <td style="color: black">BUST</td>
+                        <td style="color: black">SHOULDER TO BUST</td>
+                        <td style="color: black">UNDER BUST</td>
+                        <td style="color: black">FULL SLEEVE LENGTH</td>
+                         <td style="color: black">HALF SLEEVE LENGTH</td>
+                        <td style="color: black">BICEP</td>
+                        <td style="color: black">SHOULDER TO HIP</td>
+                        <td style="color: black">WAIST</td>
+                         <td style="color: black">HIP</td>
+                         <td style="color: black">WAIST TO KNEE</td>
+                        <td style="color: black">KNEE</td>
+                        <td style="color: black">INSEAM</td>
+                         <td style="color: black">THIGH</td>
+                        <td style="color: black">CUFF</td>
+
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+                        <td>{{ i.customer.customer_name}}</td>
+                        <td>{{ i.way }}</td>
+                    <td>{{ i.neck }}</td>
+                    <td>{{ i.shoulder }}</td>
+                    <td>{{ i.bust }}</td>
+                    <td>{{ i.shoulder_to_bust }}</td>
+                    <td>{{ i.under_bust }}</td>
+                    <td>{{ i.full_sleeve_length }}</td>
+                    <td>{{ i.half_sleeve_length }}</td>
+                    <td>{{ i.bicep }}</td>
+                    <td>{{ i.shoulder_to_hip }}</td>
+                        <td>{{ i.waist }}</td>
+                    <td>{{ i.hip }}</td>
+                    <td>{{ i.waist_to_knee }}</td>
+                    <td>{{ i.knee }}</td>
+                    <td>{{ i.inseam }}</td>
+                    <td>{{ i.thigh }}</td>
+                    <td>{{ i.cuff }}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{% endblock %}

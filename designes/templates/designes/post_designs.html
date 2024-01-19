@@ -1,0 +1,39 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DESIGNS</title>
+	</head>
+	<body>
+		<center>
+			<h2>STITCHING DESIGNS</h2>
+			<form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+		    <table>
+			<tr>
+				<td>DESIGNS</td>
+				<td><select name="designes" required="" class="form-control">
+					<option>--------Select--------</option>
+					<option value="COLLAR">COLLAR</option>
+					<option value="SLEEVE">SLEEVE</option>
+					<option value="POCKET">POCKET</option>
+					<option value="BUTTON">BUTTON</option>
+					<option value="NECK">NECK</option>
+					
+				</select></td>
+			</tr>
+			<tr>
+				<td>upload image</td>
+				<td><input type="file" name="img" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td></td>
+                <td><input type="submit" value="submit"></td>				
+			</tr>
+		</table>
+	</form>
+	</center>
+	</body>
+	</html>
+{% endblock %}

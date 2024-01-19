@@ -1,0 +1,31 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+ <html>
+ <head></head>
+        <body>
+            <center>
+                <h2>VIEW ASSIGN</h2>
+                <table border="1">
+                    <tr>
+                        <th>customer_id</th>
+                        <th>order_id</th>
+                        <th>deliveryboy_id</th>
+                        <th>delevery_Status</th>
+{#                        <th></th>#}
+                    </tr>
+                     {% for i in x %}
+                    <tr>
+                        <td>{{ i.order.customer.customer_name }}</td>
+                        <td>{{ i.order.orders_id }}</td>
+                        <td>{{ i.deliveryboy.name }}</td>
+                        <td>{{  i.delivery_status }} </td>
+{#                        <td><a href="/assign/DELEVERED/{{ i.assign_id}}">DELEVERED</a></td>#}
+{#                        <td><a href="/assign/NOT_DELEVERED/{{i.assign_id}}">NOTDELIVERED</a></td>#}
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+    </html>
+{% endblock %}

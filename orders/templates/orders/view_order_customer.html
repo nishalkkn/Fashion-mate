@@ -1,0 +1,33 @@
+{% extends 'temp/main_customer.html' %}
+{% block base %}
+<html>
+    <head></head>
+        <body>
+            <center>
+                <h2>VIEW ORDER</h2>
+                <table border="1">
+                    <tr>
+                        <th>customer name</th>
+                        <th>model id</th>
+                        <th>Model</th>
+                        <th>quantity</th>
+                        <th>Status</th>
+                        <th>Working_status</th>
+
+                    </tr>
+                    {% for i in x%}
+                    <tr>
+                        <td>{{ i.customer.customer_name }}</td>
+                        <td>{{ i.model.models_id }}</td>
+                        <td>{{ i.model.model }}</td>
+                        <td>{{ i.quantity }}</td>
+                        <td>{{ i.status }}</td>
+                        <td>{{ i.working_status}}</td>
+                    <td><a href="/payment/postpayment/{{ i.orders_id }}" class="btn btn-success">Pay</a> </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{% endblock %}

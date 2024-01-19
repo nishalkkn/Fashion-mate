@@ -1,0 +1,46 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Materials</title>
+	</head>
+	<body>
+		<center>
+			<h2>MATERIALS</h2>
+			<form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+		    <table>
+			<tr>
+				<td>MATERIALS</td>
+				<td><select name="materials" required="" class="form-control">
+					<option>--------Select--------</option>
+					<option value="COTTON">COTTON</option>
+					<option value="POLYESTER">POLYESTER</option>
+					<option value="STRETCH">STRETCH</option>
+					<option value="FABRIC">FABRIC</option>
+					<option value="SILK">SILK</option>
+				</select></td>
+				
+			</tr>
+			<tr>
+				<td>upload image</td>
+				<td><input type="file" name="img" required="" class="form-control"></td>
+			</tr>
+                <tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gen" value="male" checked="">Male
+                    <input type="radio" name="gen" value="female">Female
+
+                </td>
+			</tr>
+			<tr>
+				<td></td>
+                <td><input type="submit" value="submit"></td>				
+			</tr>
+		</table>
+	</form>
+	</center>
+	</body>
+	</html>
+{% endblock %}

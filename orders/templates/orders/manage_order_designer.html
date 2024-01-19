@@ -1,0 +1,46 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+<html>
+<head></head>
+        <body>
+            <center>
+                <h2>Manage order</h2>
+                <table border="1">
+                    <tr>
+                        <th>customer_id</th>
+                        <th>Address</th>
+                        <th>Pincode</th>
+                        <th>Land mark</th>
+                        <th>Phone</th>
+                        <th>model_id</th>
+                        <th>quantity</th>
+                        <th>Status</th>
+                        <th>Working status</th>
+                    </tr>
+                    {% for i in x %}
+                        <td>{{ i.customer.customer_name }}</td>
+                         <td>{{ i.customer.adress }}</td>
+                         <td>{{ i.customer.pincode }}</td>
+                         <td>{{ i.customer.landmark }}</td>
+                         <td>{{ i.customer.phone_no }}</td>
+                        <td>{{ i.model.models_id }}</td>
+                        <td>{{ i.quantity }}</td>
+                        <td>{{ i.status }}</td>
+                        <td>{{ i.working_status }}</td>
+                        <td><a href="/orders/approved/{{ i.orders_id }}">Approved</a>
+                        <a href="/orders/cancelled/{{ i.orders_id }}">cancelled</a></td>
+{#                        <td><select name="working_status">#}
+{#                            <option>Stiching</option>#}
+{#                            <option value="packed">packed</option>#}
+{#                            <option>shipped</option>#}
+{#                        </select></td>#}
+                        <td><button><a href="/orders/stiching/{{ i.orders_id }}">Stiching</a></button>
+                            <button><a href="/orders/packed/{{ i.orders_id }}">Packed </a></button>
+                            <button><a href="/orders/shiped/{{ i.orders_id }}">Shiped</a></button></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{% endblock %}

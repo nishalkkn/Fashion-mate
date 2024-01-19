@@ -1,0 +1,28 @@
+{% extends 'temp/main_designer.html' %}
+{% block base %}
+<html>
+    <head>
+        <body>
+            <center>
+                <h2>VIEW COMPLAINTS</h2>
+                <table border="1" class="table table-striped">
+                    <tr>
+                        <th>customer name</th>
+                        <th>complaint</th>
+                        <th>replay</th>
+                        <th></th>
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+                    <td>{{ i.customer.customer_name}}</td>
+                        <td>{{ i.complaint }}</td>
+                        <td>{{ i.replay }}</td>
+                        <td><button class="btn btn-outline-primary"><a href=/complaint/post_replay/{{ i.complaint_id }}>replay</button></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+    </head>
+</html>
+{% endblock %}

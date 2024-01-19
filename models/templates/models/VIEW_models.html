@@ -1,0 +1,149 @@
+{% extends 'temp/main_customer.html' %}
+{% block base %}
+<html>
+    <head>
+        <body>
+            <center>
+                <h2 style="color: black">VIEW MODELS</h2>
+             <form method="post">
+                    {% csrf_token %}
+                <tr>
+                    <td><input type="text" name="lop"></td>
+                    <td><input type="submit" value="search" class="btn btn-success"></td>
+                </tr>
+                <table border="1">
+
+                 </form>
+                    <tr>
+                        <th style="color: black">MODELS</th>
+                          <th style="color: black">COLOUR</th>
+                        <th style="color: black">IMAGES</th>
+{#                        <td style="color: black">MATERIAL</td>#}
+
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+                        <td style="color: black">{{ i.model }}</td>
+                         <td style="color: black">{{ i.colour }}</td>
+                        <td style="color: black"><img src="/static/{{ i.uplode_image }}" style="height: 200px"></td>
+                    <td><a href="/orders/postorders/{{ i.models_id }}" class="btn btn-success">Order</a> </td>
+
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+</html>
+{#    <html>#}
+{#<head>#}
+{#    <style>#}
+{#        .thumb {#}
+{#            position: relative;#}
+{#            overflow: hidden;#}
+{#        }#}
+{##}
+{#        .hover-content {#}
+{#            position: absolute;#}
+{#            top: 0;#}
+{#            left: 0;#}
+{#            width: 100%;#}
+{#            height: 100%;#}
+{#            opacity: 0;#}
+{#            background: rgba(0, 0, 0, 0.7);#}
+{#            display: flex;#}
+{#            justify-content: center;#}
+{#            align-items: center;#}
+{#            transition: opacity 0.3s;#}
+{#        }#}
+{##}
+{#        .thumb:hover .hover-content {#}
+{#            opacity: 1;#}
+{#        }#}
+{##}
+{#        .hover-content ul {#}
+{#            list-style: none;#}
+{#            padding: 0;#}
+{#            margin: 0;#}
+{#            text-align: center;#}
+{#        }#}
+{##}
+{#        .hover-content ul li {#}
+{#            display: inline-block;#}
+{#            margin-right: 10px;#}
+{#        }#}
+{##}
+{#        .hover-content a {#}
+{#            color: #fff;#}
+{#            text-decoration: none;#}
+{#            font-size: 18px;#}
+{#        }#}
+{##}
+{#        .down-content {#}
+{#            text-align: center;#}
+{#        }#}
+{##}
+{#        .stars {#}
+{#            list-style: none;#}
+{#            padding: 0;#}
+{#            margin: 0;#}
+{#            display: flex;#}
+{#            justify-content: center;#}
+{#        }#}
+{##}
+{#        .stars li {#}
+{#            margin: 0 2px;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
+{#    <section class="section" id="models">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-6">#}
+{#                    <div class="section-heading">#}
+{#                        <h2>Women's Latest Materials</h2>#}
+{#                        <span>Have a look on here to check what's new</span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-12">#}
+{#                    <div class="women-item-carousel">#}
+{#                        <div class="owl-women-item owl-carousel">#}
+{#                            {% for i in x %}#}
+{#                            <div class="thumb">#}
+{#                                <div class="hover-content">#}
+{#                                    <ul>#}
+{#                                        <li><a href="{{ i.view_link }}"><i class="fa fa-eye"></i></a></li>#}
+{#                                        <li><a href="{{ i.star_link }}"><i class="fa fa-star"></i></a></li>#}
+{#                                        <li><a href="{{ i.cart_link }}"><i class="fa fa-shopping-cart"></i></a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <img src="\static\{{ i.uplod_image }}" height="400px" width="300px">#}
+{#                                <div class="down-content">#}
+{#                                    <h4>{{ i.materials }}</h4>#}
+{#                                    <h4>{{ i.model }}</h4>#}
+{#                                    <span>{{ i.amount }}</span>#}
+{#                                    <ul class="stars">#}
+{#                                        <li><i class="fa fa-star"></i></li>#}
+{#                                        <li><i class="fa fa-star"></i></li>#}
+{#                                        <li><i class="fa fa-star"></i></li>#}
+{#                                        <li><i class="fa fa-star"></i></li>#}
+{#                                        <li><i class="fa fa-star"></i></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{#</body>#}
+{#</html>#}
+
+{% endblock %}

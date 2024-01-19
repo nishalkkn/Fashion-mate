@@ -1,0 +1,49 @@
+
+{% extends 'temp/main_customer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>payments</title>
+	</head>
+	<body>
+		<center>
+			<h2>PAYMENT</h2>
+			<form method="post">
+                {% csrf_token %}
+		    <table>
+			<tr>
+				<td>PAYMENT METHORD</td>
+				<td><select name="PAYMENT">
+					<option>--------Select--------</option>
+					<option value="UPI">UPI</option>
+					<option value="Paytm">paytm</option>
+					<option value="G pay">G pay</option>
+					<option value="phone pay">phone pay</option>
+					<option value="Net banking">Net banking</option>
+                    <option value="cash on deleivery">Cash on delivery</option>
+</select>
+			</tr>
+{#                <tr>#}
+{#                    	<td>Amount</td>#}
+{#                    	<td><input type="text" value="{{ x.model }}" name="Amount"></td>#}
+{#                    </tr>#}
+			 <tr>
+                    	<td>Amount</td>
+                    	<td><input type="text" value="{{ x.model.amount }}" name="Amount"></td>
+                    </tr>
+                    <tr>
+                    <td></td>
+                    <td><input type="submit" value="Pay"></td>
+                </tr>
+                </table>
+            </form>
+            {% if msg %}
+                <script>
+                alert('Successfully confirmed')
+                </script>
+            {% endif %}
+            </center>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'temp/main_customer.html' %}
+{% block base %}
+
+<html>
+    <head></head>
+        <body>
+            <center>
+                <h2>VIEW ASSIGN</h2>
+                <table border="1">
+                    <tr>
+
+                        <th>order_id</th>
+                        <th>delivery_boy_number</th>
+                        <th>delevery Status</th>
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+
+                        <td>{{ i.order.orders_id }}</td>
+                       <td>{{ i.deliveryboy.phone_no }}</td>
+                        <td>{{ i.delivery_status }} </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+        </body>
+    </html>
+{% endblock %}
